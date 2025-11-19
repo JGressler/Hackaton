@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Evento</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header-totem barra-navegacao formulario-header">
+        <div class="titulo-pagina">
+            <i class="fas fa-calendar-check icone-titulo"></i> 
+            <span>Marcar evento</span>
+        </div>
+        
+        <a href="index.html" class="botao-voltar">
+            <i class="fas fa-arrow-left icone-voltar"></i>
+            <span class="texto-voltar">Voltar</span>
+        </a>
+    </header>
+
+    <main class="form-container">
+        
+        <div class="coluna-form dados-evento">
+            <label for="nome-evento" class="label-form">Nome do evento:</label>
+            <input type="text" id="nome-evento" class="input-padrao" placeholder="Digite o nome aqui">
+
+            <div class="campo-inline">
+                <label for="data-inicio" class="label-form">Data:</label>
+                <input type="date" id="data-inicio" class="input-padrao input-curto">
+                <span class="label-form">até</span>
+                <input type="date" id="data-fim" class="input-padrao input-curto">
+            </div>
+
+            <label for="horario" class="label-form">Horário:</label>
+            <input type="time" id="horario" class="input-padrao">
+
+            <div class="campo-inline">
+                <span class="label-form">Pagamento:</span>
+                <label class="radio-label"><input type="radio" name="pagamento" value="sim" class="radio-input">Sim</label>
+                <label class="radio-label"><input type="radio" name="pagamento" value="nao" class="radio-input">Não</label>
+            </div>
+
+            <label for="local" class="label-form">Local:</label>
+            <input type="text" id="local" class="input-padrao" placeholder="Ex: Auditório Principal">
+
+            <label for="max-participantes" class="label-form">Máximo de participante:</label>
+            <input type="number" id="max-participantes" class="input-padrao" min="1">
+        </div>
+
+        <div class="coluna-form descricao-evento">
+            <h3 class="titulo-coluna">Descrição do evento</h3>
+            <textarea class="textarea-padrao" placeholder="Detalhes, agenda e informações importantes..."></textarea>
+        </div>
+
+        <div class="coluna-form descricao-certificado">
+            <h3 class="titulo-coluna">Descrição do certificado</h3>
+            <textarea class="textarea-padrao" placeholder="Informações que devem constar no certificado..."></textarea>
+        </div>
+
+    </main>
+
+    <footer class="form-footer">
+        <button type="submit" class="botao-acao">Cadastrar evento</button>
+    </footer>
+</body>
+</html>

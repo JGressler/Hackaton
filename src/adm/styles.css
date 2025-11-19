@@ -1,0 +1,358 @@
+/* Configurações básicas para tela cheia e reset */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* Header para o botão de usuário */
+.header-totem {
+    width: 100%; /* Ocupa 100% da largura da tela */
+    display: flex;
+    justify-content: flex-end; /* *** FORÇA O BOTÃO PARA O CANTO DIREITO *** */
+    padding: 20px 30px; 
+    box-sizing: border-box; 
+}
+
+/* Estilo do botão de usuário - CORRIGIDO O TAMANHO */
+.botao-usuario {
+    text-decoration: none;
+    color: #333;
+    font-size: 4rem; /* *** TAMANHO GRANDE PARA O ÍCONE NO TIPO TOTEM *** */
+    transition: transform 0.2s, color 0.2s;
+    /* Fazendo com que o link em si se comporte como um bloco grande */
+    display: block; 
+}
+
+.botao-usuario:active, .botao-usuario:hover {
+    transform: scale(1.1); 
+    color: #007bff; 
+}
+
+
+/* Contêiner dos botões principais - Centraliza o bloco de 3 botões */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    flex-grow: 1; 
+    margin-bottom: 20px; 
+}
+
+/* Estilo geral dos botões centrais (mantido o tamanho grande para totem) */
+.botao-totem {
+    width: 25vw;
+    height: 35vh;
+    min-width: 200px;
+    min-height: 250px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Cores e estilos (mantidos) */
+.azul-claro {
+    background-color: #C0DDEB;
+    border-color: #6C92A6;
+}
+
+.amarelo-claro {
+    background-color: #F7EBD1;
+    border-color: #B3A07D; 
+}
+
+.verde-claro {
+    background-color: #D3EBC6;
+    border-color: #8CA77E;
+}
+
+.icone-grande {
+    font-size: 8vw;
+    margin-bottom: 20px;
+}
+
+.texto-botao {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.botao-totem:active, .botao-totem:hover {
+    transform: translateY(4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para telas menores (media queries) */
+@media (max-width: 768px) {
+    .header-totem {
+        padding: 15px 20px;
+    }
+
+    .botao-usuario {
+        font-size: 3rem; /* Ajuste para telas menores */
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .botao-totem {
+        width: 80vw;
+        height: 20vh;
+        margin-bottom: 20px;
+    }
+    
+    .icone-grande {
+        font-size: 10vw;
+    }
+    
+    .texto-botao {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- ESTILOS PARA A NOVA BARRA DE NAVEGAÇÃO --- */
+
+/* Estilo da barra de navegação para a subpágina */
+.barra-navegacao {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaço entre título e botão Voltar */
+    align-items: center;
+    background-color: #C0DDEB; /* Cor de fundo da barra superior (similar ao azul do botão) */
+    color: #333;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 80px; /* Altura mínima para usabilidade */
+}
+
+.titulo-pagina {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem; /* Título grande */
+    font-weight: bold;
+}
+
+.icone-titulo {
+    font-size: 3rem;
+    margin-right: 15px;
+}
+
+/* Estilo do botão Voltar */
+.botao-voltar {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.icone-voltar {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.botao-voltar:active, .botao-voltar:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+/* --- NOVAS CORES DE BOTÕES (para a subpágina, se diferentes) --- */
+
+.azul-escuro {
+    /* Cor similar ao botão da barra superior da sua nova imagem */
+    background-color: #6C92A6; 
+    border-color: #4C6A7A; 
+    color: #fff; /* Texto branco para maior contraste */
+}
+
+.amarelo-escuro {
+    background-color: #D6C291; 
+    border-color: #A3916B;
+}
+
+.verde-escuro {
+    background-color: #9EC086; 
+    border-color: #7A906A;
+}
+
+/* --- ESTILOS GERAIS DE FORMULÁRIO --- */
+
+/* Ajusta o corpo para centralizar o main e o footer */
+body {
+    min-height: 100vh; /* Garante que o body tenha pelo menos a altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header do Formulário (mantém o estilo da barra-navegacao mas com cores específicas) */
+.formulario-header {
+    background-color: #D3EBC6; /* Um verde/amarelo claro para harmonizar com os campos */
+    color: #333;
+}
+
+/* Container Principal do Formulário */
+.form-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    justify-content: space-around;
+    padding: 30px;
+    flex-grow: 1; /* Ocupa o espaço central entre header e footer */
+    gap: 20px; /* Espaço entre as colunas */
+}
+
+/* Estilo das Colunas */
+.coluna-form {
+    padding: 20px;
+    border-radius: 15px;
+    flex-basis: 30%; /* Três colunas em telas grandes */
+    min-width: 300px; /* Garante tamanho mínimo */
+}
+
+/* Estilos de Cores das Colunas (Baseado nos tons da sua imagem) */
+.dados-evento {
+    background-color: #F7EBD1; /* Amarelo claro */
+    flex-basis: 25%; /* Deixa a coluna de dados mais estreita */
+}
+
+.descricao-evento, .descricao-certificado {
+    background-color: #E0E0D5; /* Cinza/Bege claro */
+    flex-basis: 30%;
+}
+
+.titulo-coluna {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #555;
+}
+
+/* --- ESTILOS DOS CAMPOS DE ENTRADA (Tamanho e Usabilidade) --- */
+
+.label-form {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.input-padrao {
+    width: 100%;
+    padding: 15px 10px; /* Padding GRANDE para facilitar o toque */
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.4rem; /* Fonte grande para legibilidade */
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.input-padrao:focus {
+    border-color: #8C9242; /* Foco suavemente verde/amarelo */
+    outline: none;
+}
+
+/* Campos inline (data e pagamento) */
+.campo-inline {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-curto {
+    flex-grow: 1;
+    max-width: 40%;
+}
+
+/* Radio Buttons */
+.radio-label {
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.radio-input {
+    transform: scale(1.5); /* Aumenta o radio button para ser clicável no totem */
+    margin-right: 8px;
+}
+
+/* Textarea */
+.textarea-padrao {
+    width: 100%;
+    height: 350px; /* Altura generosa para visualização de texto */
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    resize: none; /* Impede o usuário de redimensionar */
+    box-sizing: border-box;
+}
+
+
+/* --- ESTILOS DO RODAPÉ (BOTÃO CADASTRAR) --- */
+.form-footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+    padding: 20px 50px;
+}
+
+.botao-acao {
+    padding: 15px 30px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: #D6C291; /* Cor de ação amarela/bege */
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-acao:hover {
+    background-color: #B3A07D;
+}
+
+.botao-acao:active {
+    transform: translateY(2px); /* Efeito de clique */
+}
+
+/* Media Query para telas menores */
+@media (max-width: 1200px) {
+    .coluna-form {
+        flex-basis: 100%; /* Colunas empilhadas em telas menores */
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+}
